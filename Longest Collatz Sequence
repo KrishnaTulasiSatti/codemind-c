@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+int check(int n) {
+    int c = 0;
+    while(n>1)
+    {
+        if(n%2==0) n/=2;
+        else n=n*3+1;
+       
+        c++;
+    }
+    return c;
+}
+int main() {
+   
+  int n,m;
+  scanf("%d %d",&n,&m);
+  int max = 0;
+  int ans = 0;
+  for(int i = n;i <= m;i++){
+     int res = check(i);
+     if(max < res)
+     {
+         max = res;
+         ans = i;
+     }
+   }
+   printf("%d",ans);
+    return 0;
+}
